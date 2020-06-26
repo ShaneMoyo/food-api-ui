@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import api from '../../../services/foodAPI'
 import Picture from '../../utils/Picture';
 import Resource from '../../utils/Resource'; 
+import { Link } from 'react-router-dom'; 
 
 export default class RecipeContainer extends Component {
     
@@ -24,7 +25,10 @@ export default class RecipeContainer extends Component {
                                 {recipies.map((recipie, index) => (
                                     <li key={index}>
                                         <h4>{recipie.title}</h4>
-                                        <Picture url={`https://spoonacular.com/recipeImages/${recipie.id}-556x370.jpg`}/>   
+                                        <Link to={`/detail/${recipie.id}`}>
+                                            <Picture url={`https://spoonacular.com/recipeImages/${recipie.id}-556x370.jpg`}/>  
+                                        </Link>
+                                         
                                     </li>
                                 ))}
                             </ul>

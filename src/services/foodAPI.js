@@ -2,7 +2,7 @@ export default {
     async getRecipeByFood(food) {
         try {
             const response = await fetch(
-                `https://api.spoonacular.com/recipes/search?query=${food}&number=2&apiKey=${process.env.REACT_APP_API_KEY}`
+                `https://api.spoonacular.com/recipes/search?query=${food}&number=15&apiKey=${process.env.REACT_APP_API_KEY}`
                 
             ).then(res => res.json());
             console.log('response: ', response); 
@@ -14,7 +14,7 @@ export default {
     async getRecipeSummaryByUrl(url) {
         try {
             const response = await fetch(
-                `https://api.spoonacular.com/recipes/extract?url=${url}&apiKey=${process.env.REACT_APP_API_KEY}`
+                `https://api.spoonacular.com/recipes/${url}/ingredientWidget.json&apiKey=${process.env.REACT_APP_API_KEY}`
                 
             ).then(res => res.json());
             console.log('response: ', response); 
@@ -25,4 +25,6 @@ export default {
     }
 }
 
-https://api.spoonacular.com/recipes/extract?url=https://foodista.com/recipe/ZHK4KPB6/chocolate-crinkle-cookies
+//https://api.spoonacular.com/recipes/extract?url=https://foodista.com/recipe/ZHK4KPB6/chocolate-crinkle-cookies
+//https://api.spoonacular.com/recipes/{id}/ingredientWidget.json
+//https://api.spoonacular.com/recipes/1003464/priceBreakdownWidget.json
