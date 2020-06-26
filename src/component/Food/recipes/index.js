@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import api from '../../../services/foodAPI'
+import Picture from '../../utils/Picture';
 
 export default class RecipeContainer extends Component {
     state ={
@@ -32,7 +33,7 @@ export default class RecipeContainer extends Component {
         const recipeList = recipies.map((recipie, index) => (
             <li key={index}>
                 <h4>{recipie.title}</h4>
-                <img src={`https://spoonacular.com/recipeImages/${recipie.id}-556x370.jpg`} alt="recipie"/>   
+                <Picture url={`https://spoonacular.com/recipeImages/${recipie.id}-556x370.jpg`}/>   
             </li>
         )); 
         if(loading) {
