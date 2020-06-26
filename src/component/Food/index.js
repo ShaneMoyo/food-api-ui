@@ -28,7 +28,7 @@ export default class FoodContainer extends Component {
                         /> 
                     <button type="submit">Search</button>
                 </form>
-                <Route path="/:query" render={(props) => <Recipes {...props} key={props.match.params.query}/>}/>
+                <Route path="/:query" render={props => <Recipes {...props} key={props.match.params.query}/>}/>
             </div> 
         ); 
     }
