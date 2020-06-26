@@ -14,7 +14,7 @@ export default {
     async getRecipeSummaryByUrl(url) {
         try {
             const response = await fetch(
-                `https://api.spoonacular.com/recipes/${url}/ingredientWidget.json&apiKey=${process.env.REACT_APP_API_KEY}`
+                `https://api.spoonacular.com/recipes/716429/information&apiKey=${process.env.REACT_APP_API_KEY}`
                 
             ).then(res => res.json());
             console.log('response: ', response); 
