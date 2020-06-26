@@ -29,20 +29,26 @@ export default class RecipeContainer extends Component {
 
     render() { 
         const { loading, recipies, error } = this.state; 
+        const recipeList = recipies.map((recipie, index) => (
+            <li key={index}>
+                <h4>{recipie.title}</h4>
+                <img src={`https://spoonacular.com/recipeImages/${recipie.id}-556x370.jpg`} alt="recipie"/>   
+            </li>
+        )); 
         if(loading) {
             return(
                 <h1>Give me a sec im getting the recipies</h1>
             );
-        } else if(true) {
+        } else if(error) {
             return(
                 <h1>Something went wrong</h1>
             );
         } else { 
-            // return(
-            //     <ul>
-            //         {recipies.map((recipie, index) => <li key={index}>{index}</li>)}
-            //     </ul>
-            // );
+            return(
+                <ul style={{ listStyleType: 'none'}}>
+                    {recipeList}
+                </ul>
+            );
         }
     }
 }
